@@ -4,9 +4,28 @@
 ![logo](https://i.imgur.com/7VPmqik.png)
 
 <h1 align="center"> Introduction </h1>
-Let's say you already have spun up an instance of rbxcat-server 
+Let's say you already have spun up an instance of rbxcat-server and you want to connect it to a discord bot for ease of access. Well, think no longer, for rbxcat-bot is here to save the day!
 
 
+
+This bot comes with a few preconfigured commands, but let's be honest, if you're hosting rbxcat-server yourself, you already know how to do most things in it.
+
+
+This bot will allow you to interface directly to your rbxcat-server webserver, enabling Roblox's OpenCloudMessaging api to be used from the comfort of your favorite developer-only discord server.
+
+Want to find out what server your friend is in (in your game)?
+
+`/findplayer player:"watchconnector"` (thanks Leah!) will do the trick.
+
+Want to see the statistics of one, or all, of your game servers?
+
+`/server rbx_ocm_apikey:"obby_wallrun" server:"all"`
+
+Want to send a message to a certain server with a certain someone in it?
+
+`/sendmessage rbx_ocm_apikey:"obby_megarainbow" server:"server-id-here" message:"Leah please take me back!"`
+
+The possibilities are as large as your imagination (and your programming skills)!
 
 <h1 align="center"> Installation </h1>
 To install and serve rbxcat-bot, you will need to meet a few prereqs.
