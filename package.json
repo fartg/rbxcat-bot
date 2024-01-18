@@ -1,0 +1,19 @@
+{
+  "name": "catbot_recode",
+  "version": "1.0.0",
+  "description": "the cutest rbxcat enabled bot around",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zach <github.com/fartg>",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  }
+}
