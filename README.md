@@ -21,12 +21,44 @@ To install via git, simply do:
 ```bash
 git clone https://github.com/fartg/rbxcat-bot.git
 ```
-inside of your directory, and serve via:
+inside of your directory, and install our dependencies via:
 ```node
 npm install
-node main.js
 ```
 
 Running "npm install" SHOULD install all of our dependencies automagically, but if not please install all the dependencies located in our package.json file.
 
 <h1 align="center"> Setup </h1>
+By now, everyone should know how to set up a discord.js bot. If you don't, that's no problem. Here we're going to outline how to go from no bot user to fully running rbxcat-bot instance.
+
+
+# Set up a developer application on Discord.com
+1. Head to [this](https://discord.com/developers/applications) link. (https://discord.com/developers/applications)
+2. Click "New Application" on the top right.
+3. Give it a name. I named mine catbot_dev, but you can choose your own.
+4. Click the Bot button on the left of the page that it redirected you to.
+5. Click "Reset Token" in the middle of your screen and make sure to write down what it populates with. (We'll need it later)
+6. Give it a profile picture. (I chose a cute fish.)
+
+# Configure .env variables
+1. Create a new file in your projects main directory (where main.js & register-commands.js are)
+2. Name it ".env"
+3. Configure it as the following:
+```
+token="your_bot_token_here"
+client_id="your_bots_client_id"
+guild_id="server_where_the_bot_goes"
+```
+( make sure to change the values to what yours are!);
+
+# Configure config.json inside of commands/webserver
+1. Rename config-example.json to config.json
+2. Change the webserver to your currently hosted rbxcat-server site.
+3. Change your auth token to your self supplied auth token (from rbxcat-server).
+4. Save the file.
+
+# Serve the bot
+1. If you followed all of the steps correctly, you should have a fully finished bot ready to be hosted!
+2. Right click your bots file directory and "Open in Terminal".
+3. Serve via `node main.js`
+4. Profit!

@@ -1,5 +1,4 @@
 {
     "webserver": "your_link_here",
-    "rbx_ocm_apikey": "your_opencloudmessaging_topic",
     "auth_header": "your_authheader_here"
 }
