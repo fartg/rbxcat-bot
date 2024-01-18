@@ -1,4 +1,5 @@
 import logger from "../misc/logger.js";
+import { PermissionsBitField } from 'discord.js';
 
 export async function handle(interaction) {
     const command = interaction.client.commands.get(interaction.commandName);

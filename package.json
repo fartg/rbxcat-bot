@@ -10,6 +10,7 @@
   "author": "Zach <github.com/fartg>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.5",
     "chalk": "^5.3.0",
     "discord.js": "^14.14.1",
     "dotenv": "^16.3.1",

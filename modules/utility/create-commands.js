@@ -1,5 +1,5 @@
 // imports
-import { SlashCommandBuilder, Collection } from 'discord.js';
+import { Collection } from 'discord.js';
 import * as fs from 'fs';
 import * as path from 'path';
 

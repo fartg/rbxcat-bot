@@ -1,4 +1,4 @@
-import { Client, Collection, GatewayIntentBits, Events } from 'discord.js';
+import { Client, GatewayIntentBits, Events } from 'discord.js';
 
 import {build_commands} from "./modules/utility/create-commands.js"
 import {handle} from "./modules/utility/command-handler.js"
