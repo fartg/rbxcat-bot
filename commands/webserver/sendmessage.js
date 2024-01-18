@@ -7,31 +7,39 @@ const config = require('./config.json');
 export const command = {
     name: "sendmessage",
     description: "wow wow you want to send a message to a server WOAH",
-    options: [{
+    options: [
+        {
+            type: 3, // string
+            name: "rbx_ocm_apikey",
+            description: "your short alias rbx_ocm_apikey",
+            required: true,
+        },
+        {
         type: 3, // string
         name: "server_id",
         description: "the server id",
         required: true,
-    },
-    {
-        type: 3, // string
-        name: "message",
-        description: "message to send",
-        required: true,
-    },
-    {
-        type: 3, // string
-        name: "type",
-        description: "message type",
-        choices: [{name: "system", value: "system"},
-        {name: "info", value: "info"}],
-        required: true,
-    }],
+        },
+        {
+            type: 3, // string
+            name: "message",
+            description: "message to send",
+            required: true,
+        },
+        {
+            type: 3, // string
+            name: "type",
+            description: "message type",
+            choices: [{name: "system", value: "system"},
+            {name: "info", value: "info"}],
+            required: true,
+        }
+    ],
     exec: async function(interaction) {
         let request_link = config.webserver + "/serveto/?server=" + interaction.options.getString('server_id', true);
 
         let json_build = {
-            "rbx_ocm_apikey": config.rbx_ocm_apikey,
+            "rbx_ocm_apikey": interaction.options.getString('rbx_ocm_apikey', true),
             "body": {
                 "event": "message",
                 "arguments": {
@@ -40,6 +48,7 @@ export const command = {
                 }
             }
         };
+        await interaction.reply("loading");
 
         let request = await axios({
             url: request_link,
@@ -48,6 +57,6 @@ export const command = {
             data: json_build,
         });
 
-        await interaction.reply("```"+JSON.stringify(request.data.response)+"```");
+        await interaction.editReply("```"+JSON.stringify(request.data.response)+"```");
     }
 }
