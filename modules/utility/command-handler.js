@@ -1,4 +1,4 @@
-import logger from "./logger.js";
+import logger from "../misc/logger.js";
 
 export async function handle(interaction) {
     const command = interaction.client.commands.get(interaction.commandName);

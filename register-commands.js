@@ -1,5 +1,5 @@
 import { REST, Routes, Collection } from 'discord.js';
-import * as cc from './modules/utility/create-commands.js';
+import * as cc from './modules/utility/create-commands.js'
 import 'dotenv/config' // for local testing, remove in prod
 
 const rest = new REST().setToken(process.env.token);
