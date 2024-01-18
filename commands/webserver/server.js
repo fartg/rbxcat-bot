@@ -5,8 +5,8 @@ const require = createRequire(import.meta.url);
 const config = require('./config.json');
 
 export const command = {
-    name: "findplayer",
-    description: "oh so Now you want to stalk him huh",
+    name: "server",
+    description: "OK FINE take the server information",
     options: [{
         type: 3, // string
         name: "rbx_ocm_apikey",
@@ -15,12 +15,12 @@ export const command = {
         },
         {
             type: 3, // string
-            name: "player",
-            description: "player to find",
+            name: "server",
+            description: "server id or \"all\"",
             required: true,
         }],
     exec: async function(interaction) {
-        let request_link = config.webserver + "/database/player/" + interaction.options.getString('player', true);
+        let request_link = config.webserver + "/database/server/" + interaction.options.getString('server', true);
         
         await interaction.reply("loading");
 
@@ -31,6 +31,6 @@ export const command = {
             data: {"rbx_ocm_apikey": interaction.options.getString('rbx_ocm_apikey', true)}
         });
 
-        await interaction.editReply("```"+JSON.stringify(request.data.response, null, 2)+"```");
+        await interaction.editReply("```"+JSON.stringify(request.data.response)+"```");
     }
 }

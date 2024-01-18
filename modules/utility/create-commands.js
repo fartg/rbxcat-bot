@@ -15,6 +15,7 @@ export async function build_commands() {
 
         for (const file of command_files) {
             const file_path = path.join(type_dir, file);
+            
             await import("file://"+file_path).then((file) => {
                 const command = file.command;
                 

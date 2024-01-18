@@ -25,14 +25,6 @@ export const command = {
             name: "message",
             description: "message to send",
             required: true,
-        },
-        {
-            type: 3, // string
-            name: "type",
-            description: "message type",
-            choices: [{name: "system", value: "system"},
-            {name: "info", value: "info"}],
-            required: true,
         }
     ],
     exec: async function(interaction) {
@@ -44,10 +36,11 @@ export const command = {
                 "event": "message",
                 "arguments": {
                     "message": interaction.options.getString('message', true),
-                    "type": interaction.options.getString('type', true)
+                    "type": "system"
                 }
             }
         };
+
         await interaction.reply("loading");
 
         let request = await axios({
@@ -57,6 +50,6 @@ export const command = {
             data: json_build,
         });
 
-        await interaction.editReply("```"+JSON.stringify(request.data.response)+"```");
+        await interaction.editReply("```"+JSON.stringify(request.data.response, null, 2)+"```");
     }
 }
