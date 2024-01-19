@@ -27,6 +27,11 @@ Want to send a message to a certain server with a certain someone in it?
 
 The possibilities are as large as your imagination (and your programming skills)!
 
+<h1 align="center"> Media </h1>
+
+https://github.com/fartg/rbxcat-bot/assets/70608092/8d96aa01-06ae-4c42-8642-07f83f5dea8d
+
+
 <h1 align="center"> Installation </h1>
 To install and serve rbxcat-bot, you will need to meet a few prereqs.
 
