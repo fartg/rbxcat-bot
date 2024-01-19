@@ -47,10 +47,10 @@ git clone https://github.com/fartg/rbxcat-bot.git
 ```
 inside of your directory, and install our dependencies via:
 ```node
-npm install
+npm install package.json
 ```
 
-Running "npm install" SHOULD install all of our dependencies automagically, but if not please install all the dependencies located in our package.json file.
+Running "npm install package.json" SHOULD install all of our dependencies automagically, but if not please install all the dependencies located in our package.json file.
 
 <h1 align="center"> Setup </h1>
 By now, everyone should know how to set up a discord.js bot. If you don't, that's no problem. Here we're going to outline how to go from no bot user to fully running rbxcat-bot instance.
