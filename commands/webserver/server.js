@@ -1,35 +1,27 @@
-import { createRequire } from 'node:module';
-import axios, { Axios } from 'axios';
-const require = createRequire(import.meta.url);
-
-const config = require('./config.json');
+import database from "../../modules/utility/database.js";
 
 export const command = {
     name: "server",
-    description: "OK FINE take the server information",
+    description: "Returns server information from your rbxcat-server instance",
     options: [{
         type: 3, // string
-        name: "rbx_ocm_apikey",
-        description: "your short alias rbx_ocm_apikey",
+        name: "ocm_key",
+        description: "Your OCM short-key",
         required: true,
         },
         {
             type: 3, // string
             name: "server",
-            description: "server id or \"all\"",
+            description: "Server ID or \"all\"",
             required: true,
         }],
-    exec: async function(interaction) {
-        let request_link = config.webserver + "/database/server/" + interaction.options.getString('server', true);
-        
+    exec: async function(interaction) {        
         await interaction.reply("loading");
+        
+        let server_id = interaction.options.getString('server', true);
+        let ocm_key = interaction.options.getString('ocm_key', true);
 
-        let request = await axios({
-            url: request_link,
-            headers: {"authorization": config.auth_header},
-            method: "get",
-            data: {"rbx_ocm_apikey": interaction.options.getString('rbx_ocm_apikey', true)}
-        });
+        let request = await database.Server(server_id, ocm_key);
 
         await interaction.editReply("```"+JSON.stringify(request.data.response)+"```");
     }
