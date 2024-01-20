@@ -1,7 +1,8 @@
-<h1 align="center"> rbxcat-bot: </h1>
-<h2 align="center">Discord integration to your rbxcat-server instance!</h2>
+<h1 align="center"> rbxcat-bot </h1>
 
-![logo](https://i.imgur.com/7VPmqik.png)
+![rbxcat bot](https://github.com/fartg/rbxcat-bot/assets/70608092/7df2b887-04f8-4ed3-85ed-c7efb0dc02e8)
+
+<h2 align="center">Discord integration to your rbxcat-server instance!</h2>
 
 <h1 align="center"> Introduction </h1>
 Let's say you already have spun up an instance of rbxcat-server and you want to connect it to a discord bot for ease of access. Well, think no longer, for rbxcat-bot is here to save the day!
